@@ -13,7 +13,7 @@ namespace KilkerranAzure.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Message = "Hello from Home.";
+            ViewBag.Message = "Hello from Home in Azure.";
 
             return View();
         }
