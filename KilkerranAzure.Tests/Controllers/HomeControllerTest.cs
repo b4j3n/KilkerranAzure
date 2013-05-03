@@ -21,5 +21,18 @@ namespace KilkerranAzure.Tests.Controllers
             // Assert
             Assert.IsNotNull(viewResult);
         }
+
+        [Test]
+        public void DummyTest()
+        {
+            // Arrange
+            HomeController controller = new HomeController();
+
+            // Act
+            ViewResult viewResult = controller.Index() as ViewResult;
+
+            // Assert
+            Assert.AreEqual("Hello from Home in Azure", viewResult.ViewBag.Message);
+        }
     }
 }
