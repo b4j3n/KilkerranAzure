@@ -32,7 +32,7 @@ namespace KilkerranAzure.Tests.Controllers
             ViewResult viewResult = controller.Index() as ViewResult;
 
             // Assert
-            Assert.AreEqual("Hello from Home in Azure", viewResult.ViewBag.Message);
+            Assert.AreEqual("Hello from Home in Azure.", viewResult.ViewBag.Message);
         }
     }
 }
