@@ -4,7 +4,30 @@
 
 <h2>@ViewBag.Title</h2>
 <h3>@ViewBag.Message</h3>
-<h3>And now also with Continuous Delivery using Git and TeamCity.</h3>
-<h4>Implementing feature1.</h4>
-<h4>Adding another header.</h4>
-<h4>Adding yet another header.</h4>
+
+<p>First name: <strong data-bind="text: firstName">todo</strong></p>
+<p>Last name: <strong data-bind="text: lastName">todo</strong></p>
+
+<p>Full name: <strong data-bind="text: fullName"></strong></p>
+
+<p>First name: <input data-bind="value: firstName" /></p>
+<p>Last name: <input data-bind="value: lastName" /></p>
+
+<script type="text/javascript" src="../../Scripts/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="../../Scripts/knockout-2.2.0.js"></script>
+
+<script type="text/javascript">
+    function AppViewModel() {
+        var self = this;
+
+        self.firstName = ko.observable("Jocke");
+        self.lastName = ko.observable("Borlin");
+        
+        self.fullName = ko.computed(function () {
+            return self.firstName() + " " + self.lastName();
+        }, self);
+    };
+
+    // Activates knockout.js
+    ko.applyBindings(new AppViewModel());
+</script>
